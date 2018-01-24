@@ -1,22 +1,39 @@
 <br><br>
+<%
+numbers1_100 = [*1..20].shuffle
+number1= numbers1_100.pop
+number2= numbers1_100.pop
+number3= numbers1_100.pop
+number4= numbers1_100.pop
+number5= numbers1_100.pop
+number6= numbers1_100.pop
 
+
+
+
+
+puts numbers1_100
+
+%>
 <style>
 form { margin-left:35%;  }
 body {text-align: left; margin-left:15%;}
+
+
 </style>
 
-<h1> Enter your selected 6 digit lottery number: </h1>
+<h1> Accept the randomly generated numbers or choose 6 numbers between 1 and 20: </h1>
 <br>
 <h2>
 <form method="post" action="/number_selection">
  
 <h1>
-<input type="integer" name="my_number1"> 1st number <br>
-<input type="integer" name="my_number2"> 2nd number <br>
-<input type="integer" name="my_number3"> 3rd number <br>
-<input type="integer" name="my_number4"> 4th number <br>
-<input type="integer" name="my_number5"> 5th number <br>
-<input type="integer" name="my_number6"> 6th number <br>
+<input type="integer" name="my_number1" value="<%= number1 %>"> 1st number <br>
+<input type="integer" name="my_number2" value="<%= number2 %>"> 2nd number <br>
+<input type="integer" name="my_number3" value="<%= number3 %>"> 3rd number <br>
+<input type="integer" name="my_number4" value="<%= number4 %>"> 4th number <br>
+<input type="integer" name="my_number5" value="<%= number5 %>"> 5th number <br>
+<input type="integer" name="my_number6" value="<%= number6 %>"> 6th number <br>
   <input type="submit" value="Submit"></h1>
 
  </form> 

@@ -1,5 +1,5 @@
 <%
-all_numbers = [*1..100]
+all_numbers = [*1..20]
 
 six_numbers = all_numbers.shuffle[0, 6]
 
@@ -11,18 +11,31 @@ my_number4 = my_number4.to_i
 my_number5 = my_number5.to_i
 my_number6 = my_number6.to_i
 
+my_number_array = [my_number1,my_number2,my_number3,my_number4,my_number5,my_number6]
+
+
 # puts my_number1, my_number2, my_number3, my_number4, my_number5, my_number6
 
 %>
-The lottery number for today is:
+
+<br><br><br>
+<h1>
+The lottery number is:
 <br>
 <%= six_numbers %>
 <br><br>
 Your selected numbers are:
 <br>
+<!-- 
 <%= my_number1 %>,
 <%= my_number2 %>,
 <%= my_number3 %>,
 <%= my_number4 %>,
 <%= my_number5 %>,
-<%= my_number6 %>,
+<%= my_number6 %>, -->
+<%= my_number_array %>
+<br><br><br>
+you matched 
+<%= compare(my_number_array,six_numbers)   %>  numbers</h1>
+
+<h1><a href="http://localhost:4567/">Click to play again</a></h1>
