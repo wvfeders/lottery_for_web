@@ -1,0 +1,28 @@
+<%
+all_numbers = [*1..100]
+
+six_numbers = all_numbers.shuffle[0, 6]
+
+
+my_number1 = my_number1.to_i
+my_number2 = my_number2.to_i
+my_number3 = my_number3.to_i
+my_number4 = my_number4.to_i
+my_number5 = my_number5.to_i
+my_number6 = my_number6.to_i
+
+# puts my_number1, my_number2, my_number3, my_number4, my_number5, my_number6
+
+%>
+The lottery number for today is:
+<br>
+<%= six_numbers %>
+<br><br>
+Your selected numbers are:
+<br>
+<%= my_number1 %>,
+<%= my_number2 %>,
+<%= my_number3 %>,
+<%= my_number4 %>,
+<%= my_number5 %>,
+<%= my_number6 %>,

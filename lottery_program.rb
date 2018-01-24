@@ -1,9 +1,9 @@
-six_numbers = [1,2,3,4,5,6]
-my_numbers = [6,7,8,9,10,11]
-puts six_numbers
+# six_numbers = [1,2,3,4,5,6]
+# my_numbers = [1,2,3,4,5,6]
+# puts six_numbers
 
 def compare(my_numbers,six_numbers)
-	puts six_numbers
+
 	six_number_count = 0
 	
 	total = 0
@@ -21,6 +21,6 @@ def compare(my_numbers,six_numbers)
 	total
 end
 
-total = compare(my_numbers,six_numbers)
-puts six_numbers
-puts total		
+# total = compare(my_numbers,six_numbers)
+# puts six_numbers
+# puts total		
