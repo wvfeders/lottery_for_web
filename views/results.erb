@@ -13,9 +13,6 @@ my_number6 = my_number6.to_i
 
 my_number_array = [my_number1,my_number2,my_number3,my_number4,my_number5,my_number6]
 
-
-# puts my_number1, my_number2, my_number3, my_number4, my_number5, my_number6
-
 %>
 
 <br><br><br>
@@ -34,8 +31,63 @@ Your selected numbers are:
 <%= my_number5 %>,
 <%= my_number6 %>, -->
 <%= my_number_array %>
-<br><br><br>
-you matched 
-<%= compare(my_number_array,six_numbers)   %>  numbers</h1>
 
+<%
+matches = compare(my_number_array,six_numbers)
+%>
+<br><br><br>
+You matched <%= matches   %>  numbers</h1>
+
+<%if matches == 0
+	win = 1
+ 	$tokens = $tokens
+  elsif matches == 1
+  	win = 0
+  	$tokens = $tokens - 1	
+  elsif matches == 2
+  	win = 0
+  	$tokens = $tokens - 1	
+  elsif matches == 3
+  	win = 2
+  	$tokens = $tokens + 1	
+  elsif matches == 4
+  	win = 5
+  	$tokens = $tokens + 4	
+  elsif matches == 5
+  	win = 100
+  	$tokens = $tokens + 99
+  elsif matches == 6
+  	win = 10000
+  	$tokens = $tokens + 9999		  	  	  	
+ end 
+	
+%>
+
+<p id="demo"></p>
+
+
+
+<h1>You won <%= win %>  tokens. <br>
+You now have <%= $tokens %>  tokens remaining.</h1>
+<script>
+myFunction()
+
+
+function myFunction() {
+    if (<%= $tokens %> < 1) {
+    	
+         return document.getElementById("demo").innerHTML = "You are out of tokens but you will be given 10 more tokens to keep playing";
+    } 
+   
+}
+</script>
+
+<%
+if $tokens < 1
+	$tokens =10
+end		
+%>
+
+<br>
+<br>
 <h1><a href="http://localhost:4567/">Click to play again</a></h1>

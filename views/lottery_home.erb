@@ -1,4 +1,4 @@
-<br><br>
+<br>
 <%
 numbers1_100 = [*1..20].shuffle
 number1= numbers1_100.pop
@@ -9,11 +9,6 @@ number5= numbers1_100.pop
 number6= numbers1_100.pop
 
 
-
-
-
-puts numbers1_100
-
 %>
 <style>
 form { margin-left:35%;  }
@@ -22,8 +17,8 @@ body {text-align: left; margin-left:15%;}
 
 </style>
 
-<h1> Accept the randomly generated numbers or choose 6 numbers between 1 and 20: </h1>
-<br>
+<h1> Accept the randomly generated numbers or enter 6 numbers between 1 and 20: </h1>
+
 <h2>
 <form method="post" action="/number_selection">
  
@@ -34,6 +29,69 @@ body {text-align: left; margin-left:15%;}
 <input type="integer" name="my_number4" value="<%= number4 %>"> 4th number <br>
 <input type="integer" name="my_number5" value="<%= number5 %>"> 5th number <br>
 <input type="integer" name="my_number6" value="<%= number6 %>"> 6th number <br>
-  <input type="submit" value="Submit"></h1>
+  <input type="submit" value="Click to Play"></h1>
 
- </form> 
+  Each play costs 1 token.
+  <br>
+  Winnings are based on the following:
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+        margin-left:-10%; 
+    margin-right:50%
+    color: black;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 4px;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<table>
+  <tr>
+    <th>Number of Matches</th>
+    <th>Tokens Won</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+    <tr>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>0</td>
+  </tr>
+    <tr>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+    <tr>
+    <td>4</td>
+    <td>5</td>
+  </tr>
+      <tr>
+    <td>5</td>
+    <td>100</td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td>10000</td>
+  </tr>
+
+</table>  
+<br>
+ You currently have <%= $tokens %> tokens left.
